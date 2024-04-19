@@ -4368,19 +4368,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\токареваэо\\.nuget\\packages\\": {}
+    "C:\\Users\\Aziraphale\\.nuget\\packages\\": {},
+    "D:\\need_programms\\Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "\\\\main\\RDP\\33П\\ТокареваЭО\\Desktop\\p\\PracticAvalonia\\PracticAvalonia\\PracticAvalonia.csproj",
+      "projectUniqueName": "D:\\otter\\VSProject\\AvaloniaStart\\PracticAvalonia\\PracticAvalonia.csproj",
       "projectName": "PracticAvalonia",
-      "projectPath": "\\\\main\\RDP\\33П\\ТокареваЭО\\Desktop\\p\\PracticAvalonia\\PracticAvalonia\\PracticAvalonia.csproj",
-      "packagesPath": "C:\\Users\\токареваэо\\.nuget\\packages\\",
-      "outputPath": "\\\\main\\RDP\\33П\\ТокареваЭО\\Desktop\\p\\PracticAvalonia\\PracticAvalonia\\obj\\",
+      "projectPath": "D:\\otter\\VSProject\\AvaloniaStart\\PracticAvalonia\\PracticAvalonia.csproj",
+      "packagesPath": "C:\\Users\\Aziraphale\\.nuget\\packages\\",
+      "outputPath": "D:\\otter\\VSProject\\AvaloniaStart\\PracticAvalonia\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "D:\\need_programms\\Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\токареваэо\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aziraphale\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4400,6 +4405,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4443,7 +4453,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

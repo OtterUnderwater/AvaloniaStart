@@ -7,43 +7,62 @@
         Title="PracticAvalonia">
 	<Grid>
 		<StackPanel HorizontalAlignment="Center">
-			<TextBlock Text="Введите ФИО:" Margin="5"/>
+			<TextBlock Text="Введите персональные данные:" Margin="5"/>
 			<TextBox Name="tbSurname" Watermark="Фамилия" Margin="5"/>
 			<TextBox Name="tbName" Watermark="Имя" Margin="5"/>
 			<TextBox Name="tbPatronymic" Watermark="Отчество" Margin="5"/>
 			<StackPanel Orientation="Horizontal">
-				<TextBlock Text="Выберите пол:" Margin="5"/>
-				<RadioButton Name="rbM" Margin="5">Мужской</RadioButton>
-				<RadioButton Name="rbG" Margin="5">Женский</RadioButton>
+				<TextBlock Text="Пол:" Margin="5"/>
+				<RadioButton Name="rbM" Margin="5" Content="Мужской"/>
+				<RadioButton Name="rbG" Margin="5" Content="Женский"/>
 			</StackPanel>
-			<TextBlock Text="Введите номер телефона:" Margin="5"/>
-			<TextBox Name="tbTelephone" Watermark="8(XXX)XXX-XX-XX" Margin="5"/>
-			<TextBlock Text="Введите дату рождения:" Margin="5"/>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Номер телефона:" Margin="5"/>
+				<TextBox Name="tbTelephone" Watermark="8(XXX)XXX-XX-XX"/>
+			</StackPanel>
 			<StackPanel Orientation="Horizontal" >
-				<TextBlock Text="День:" Margin="5"/>
-				<NumericUpDown Name="tbDay" Margin="5" Width="150"/>
+				<TextBlock Text="Дата рождения:" Margin="5"/>
+					<NumericUpDown Name="tbDay"
+								   FormatString="0"
+								   Value="1"
+								   Minimum="1"
+								   Maximum="31"
+								   Margin="5"
+								   Width="150"/>
 				<StackPanel>
-					<ComboBox Name="cbMonth" SelectedIndex="0" Margin="5">
-						<ComboBoxItem IsEnabled="false">Месяц</ComboBoxItem>
-						<ComboBoxItem>Январь</ComboBoxItem>
-						<ComboBoxItem>Февраль</ComboBoxItem>
-						<ComboBoxItem>Март</ComboBoxItem>
-						<ComboBoxItem>Апрель</ComboBoxItem>
-						<ComboBoxItem>Май</ComboBoxItem>
-						<ComboBoxItem>Июнь</ComboBoxItem>
-						<ComboBoxItem>Июль</ComboBoxItem>
-						<ComboBoxItem>Август</ComboBoxItem>
-						<ComboBoxItem>Сентябрь</ComboBoxItem>
-						<ComboBoxItem>Октябрь</ComboBoxItem>
-						<ComboBoxItem>Ноябрь</ComboBoxItem>
-						<ComboBoxItem>Декабрь</ComboBoxItem>
+					<ComboBox Name="cbMonth" SelectedIndex="0" Margin="5" Width="150">
+						<ComboBoxItem IsEnabled="false" Content="Месяц"/>
+						<ComboBoxItem Content="Январь"/>
+						<ComboBoxItem Content="Февраль"/>
+						<ComboBoxItem Content="Март"/>
+						<ComboBoxItem Content="Апрель"/>
+						<ComboBoxItem Content="Май"/>
+						<ComboBoxItem Content="Июнь"/>
+						<ComboBoxItem Content="Июль"/>
+						<ComboBoxItem Content="Август"/>
+						<ComboBoxItem Content="Сентябрь"/>
+						<ComboBoxItem Content="Октябрь"/>
+						<ComboBoxItem Content="Ноябрь"/>
+						<ComboBoxItem Content="Декабрь"/>
 					</ComboBox>
 				</StackPanel>
-				<TextBlock Text="Год:" Margin="5"/>
-				<NumericUpDown Name="tbYear"  Margin="5" Width="150"/>
+				<NumericUpDown Name="tbYear"
+							   FormatString="0000"
+							   Value="1910"
+							   Minimum="1910"
+							   Maximum="2024"
+							   Margin="5"
+							   Width="150"/>
 			</StackPanel>
-			<Button Click="WriteFile" Margin="10">Записать в файл</Button>
-			<TextBlock Name="ShowMessage" Foreground="Red"></TextBlock>
+			<Button HorizontalAlignment="Center"
+					Content="Записать в файл"
+					Click="WriteFile"
+					Margin="10"
+					FontSize="18"/>
+			<TextBlock HorizontalAlignment="Center"
+					   Name="ShowMessage"
+					   Foreground="Red"
+					   FontSize="18"/>
 		</StackPanel>
 	</Grid>
 </Window>
