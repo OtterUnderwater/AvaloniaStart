@@ -1,0 +1,49 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PracticAvalonia.MainWindow"
+        Title="PracticAvalonia">
+	<Grid>
+		<StackPanel HorizontalAlignment="Center">
+			<TextBlock Text="Введите ФИО:" Margin="5"/>
+			<TextBox Name="tbSurname" Watermark="Фамилия" Margin="5"/>
+			<TextBox Name="tbName" Watermark="Имя" Margin="5"/>
+			<TextBox Name="tbPatronymic" Watermark="Отчество" Margin="5"/>
+			<StackPanel Orientation="Horizontal">
+				<TextBlock Text="Выберите пол:" Margin="5"/>
+				<RadioButton Name="rbM" Margin="5">Мужской</RadioButton>
+				<RadioButton Name="rbG" Margin="5">Женский</RadioButton>
+			</StackPanel>
+			<TextBlock Text="Введите номер телефона:" Margin="5"/>
+			<TextBox Name="tbTelephone" Watermark="8(XXX)XXX-XX-XX" Margin="5"/>
+			<TextBlock Text="Введите дату рождения:" Margin="5"/>
+			<StackPanel Orientation="Horizontal" >
+				<TextBlock Text="День:" Margin="5"/>
+				<NumericUpDown Name="tbDay" Margin="5" Width="150"/>
+				<StackPanel>
+					<ComboBox Name="cbMonth" SelectedIndex="0" Margin="5">
+						<ComboBoxItem IsEnabled="false">Месяц</ComboBoxItem>
+						<ComboBoxItem>Январь</ComboBoxItem>
+						<ComboBoxItem>Февраль</ComboBoxItem>
+						<ComboBoxItem>Март</ComboBoxItem>
+						<ComboBoxItem>Апрель</ComboBoxItem>
+						<ComboBoxItem>Май</ComboBoxItem>
+						<ComboBoxItem>Июнь</ComboBoxItem>
+						<ComboBoxItem>Июль</ComboBoxItem>
+						<ComboBoxItem>Август</ComboBoxItem>
+						<ComboBoxItem>Сентябрь</ComboBoxItem>
+						<ComboBoxItem>Октябрь</ComboBoxItem>
+						<ComboBoxItem>Ноябрь</ComboBoxItem>
+						<ComboBoxItem>Декабрь</ComboBoxItem>
+					</ComboBox>
+				</StackPanel>
+				<TextBlock Text="Год:" Margin="5"/>
+				<NumericUpDown Name="tbYear"  Margin="5" Width="150"/>
+			</StackPanel>
+			<Button Click="WriteFile" Margin="10">Записать в файл</Button>
+			<TextBlock Name="ShowMessage" Foreground="Red"></TextBlock>
+		</StackPanel>
+	</Grid>
+</Window>
