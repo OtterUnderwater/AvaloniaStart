@@ -6,9 +6,8 @@
         x:Class="PracticAvalonia.MainWindow"
         Title="PracticAvalonia"
 		MinWidth="600"
-		MinHeight="400">
-
-	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		MinHeight="350">
+	<ScrollViewer>
 		<Grid HorizontalAlignment="Center">
 			<StackPanel HorizontalAlignment="Center" Name="WritePanel">
 				<TextBlock Text="Введите персональные данные:" Margin="5"/>
@@ -92,5 +91,4 @@
 			</StackPanel>
 		</Grid>
 	</ScrollViewer>
-
 </Window>
