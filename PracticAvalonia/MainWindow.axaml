@@ -4,24 +4,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="PracticAvalonia.MainWindow"
-        Title="PracticAvalonia">
-	<Grid>
-		<StackPanel HorizontalAlignment="Center">
-			<TextBlock Text="Введите персональные данные:" Margin="5"/>
-			<TextBox Name="tbSurname" Watermark="Фамилия" Margin="5"/>
-			<TextBox Name="tbName" Watermark="Имя" Margin="5"/>
-			<TextBox Name="tbPatronymic" Watermark="Отчество" Margin="5"/>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock Text="Пол:" Margin="5"/>
-				<RadioButton Name="rbM" Margin="5" Content="Мужской"/>
-				<RadioButton Name="rbG" Margin="5" Content="Женский"/>
-			</StackPanel>
-			<StackPanel Orientation="Horizontal">
-				<TextBlock Text="Номер телефона:" Margin="5"/>
-				<TextBox Name="tbTelephone" Watermark="8(XXX)XXX-XX-XX"/>
-			</StackPanel>
-			<StackPanel Orientation="Horizontal" >
-				<TextBlock Text="Дата рождения:" Margin="5"/>
+        Title="PracticAvalonia"
+		MinWidth="600"
+		MinHeight="400">
+
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<Grid HorizontalAlignment="Center">
+			<StackPanel HorizontalAlignment="Center" Name="WritePanel">
+				<TextBlock Text="Введите персональные данные:" Margin="5"/>
+				<TextBox Name="tbSurname" Watermark="Фамилия" Margin="5"/>
+				<TextBox Name="tbName" Watermark="Имя" Margin="5"/>
+				<TextBox Name="tbPatronymic" Watermark="Отчество" Margin="5"/>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Пол:" Margin="5"/>
+					<RadioButton Name="rbM" Margin="5" Content="Мужской"/>
+					<RadioButton Name="rbG" Margin="5" Content="Женский"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal">
+					<TextBlock Text="Номер телефона:" Margin="5"/>
+					<TextBox Name="tbTelephone" Watermark="8(XXX)XXX-XX-XX" MinWidth="150"/>
+				</StackPanel>
+				<StackPanel Orientation="Horizontal" >
+					<TextBlock Text="Дата рождения:" Margin="5"/>
 					<NumericUpDown Name="tbDay"
 								   FormatString="0"
 								   Value="1"
@@ -29,40 +33,64 @@
 								   Maximum="31"
 								   Margin="5"
 								   Width="150"/>
-				<StackPanel>
-					<ComboBox Name="cbMonth" SelectedIndex="0" Margin="5" Width="150">
-						<ComboBoxItem IsEnabled="false" Content="Месяц"/>
-						<ComboBoxItem Content="Январь"/>
-						<ComboBoxItem Content="Февраль"/>
-						<ComboBoxItem Content="Март"/>
-						<ComboBoxItem Content="Апрель"/>
-						<ComboBoxItem Content="Май"/>
-						<ComboBoxItem Content="Июнь"/>
-						<ComboBoxItem Content="Июль"/>
-						<ComboBoxItem Content="Август"/>
-						<ComboBoxItem Content="Сентябрь"/>
-						<ComboBoxItem Content="Октябрь"/>
-						<ComboBoxItem Content="Ноябрь"/>
-						<ComboBoxItem Content="Декабрь"/>
-					</ComboBox>
+					<StackPanel>
+						<ComboBox Name="cbMonth" SelectedIndex="0" Margin="5" Width="150">
+							<ComboBoxItem IsEnabled="false" Content="Месяц"/>
+							<ComboBoxItem Content="Январь"/>
+							<ComboBoxItem Content="Февраль"/>
+							<ComboBoxItem Content="Март"/>
+							<ComboBoxItem Content="Апрель"/>
+							<ComboBoxItem Content="Май"/>
+							<ComboBoxItem Content="Июнь"/>
+							<ComboBoxItem Content="Июль"/>
+							<ComboBoxItem Content="Август"/>
+							<ComboBoxItem Content="Сентябрь"/>
+							<ComboBoxItem Content="Октябрь"/>
+							<ComboBoxItem Content="Ноябрь"/>
+							<ComboBoxItem Content="Декабрь"/>
+						</ComboBox>
+					</StackPanel>
+					<NumericUpDown Name="tbYear"
+								   FormatString="0000"
+								   Value="1910"
+								   Minimum="1910"
+								   Maximum="2024"
+								   Margin="5"
+								   Width="150"/>
 				</StackPanel>
-				<NumericUpDown Name="tbYear"
-							   FormatString="0000"
-							   Value="1910"
-							   Minimum="1910"
-							   Maximum="2024"
-							   Margin="5"
-							   Width="150"/>
+				<StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+					<Button
+						Content="Записать в файл"
+						Click="WriteFile"
+						Margin="10"
+						FontSize="18"
+						Background="Plum"
+						Foreground="Black"/>
+					<Button
+						Content="Прочитать из файла"
+						Click="ReadFile"
+						Margin="10"
+						FontSize="18"
+						Background="Plum"
+						Foreground="Black"/>
+				</StackPanel>
+				<TextBlock HorizontalAlignment="Center"
+						   Name="ShowMessage"
+						   Foreground="Red"
+						   FontSize="18"/>
 			</StackPanel>
-			<Button HorizontalAlignment="Center"
-					Content="Записать в файл"
-					Click="WriteFile"
-					Margin="10"
-					FontSize="18"/>
-			<TextBlock HorizontalAlignment="Center"
-					   Name="ShowMessage"
-					   Foreground="Red"
-					   FontSize="18"/>
-		</StackPanel>
-	</Grid>
+			<StackPanel HorizontalAlignment="Center" Name="ReadPanelControl" IsVisible="False">
+				<Button HorizontalAlignment="Center"
+							Content="Назад"
+							Click="Back"
+							Margin="10"
+							FontSize="18"
+							Background="Plum"
+							Foreground="Black"/>
+				<StackPanel HorizontalAlignment="Center" Name="ReadPanel" IsVisible="False">
+				</StackPanel>
+			</StackPanel>
+		</Grid>
+	</ScrollViewer>
+
 </Window>
